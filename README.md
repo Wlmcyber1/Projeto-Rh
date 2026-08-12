@@ -51,12 +51,6 @@ Sistema web para gerenciar as visitas técnicas realizadas por uma consultoria a
 
 5. Acesse o endereço mostrado no terminal (geralmente `http://localhost:5173`).
 
-## Acesso ao Supabase
-
-O acesso ao banco de dados é gerenciado separadamente do GitHub. Para conseguir rodar o projeto conectado ao banco real, é preciso:
-
-1. Ser convidado para o projeto no Supabase (peça a quem administra o projeto para te adicionar em **Project Settings > Team**).
-2. Depois de aceitar o convite, copiar a URL e a chave anônima em **Project Settings > API** e colar no seu `.env` local, conforme o passo 3 acima.
 
 ## Estrutura do projeto
 
