@@ -29,8 +29,8 @@ Sistema web para gerenciar as visitas técnicas realizadas por uma consultoria a
 
 1. Clone o repositório e entre na pasta do projeto (o código do Vite fica dentro da subpasta `ataFlow/`):
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repo.git
-   cd nome-do-repo/ataFlow
+   git clone https://github.com/Wlmcyber1/Projeto-Rh
+   cd Projeto-Rh/ataFlow
    ```
 
 2. Instale as dependências:
