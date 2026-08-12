@@ -1,0 +1,272 @@
+.login-container {
+  --bg-page: #e9ebee;
+  --bg-panel: #ffffff;
+  --text-primary: #17181c;
+  --text-secondary: #83868f;
+  --border-color: #e8e9ec;
+  --ink: #14141a;
+
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-page);
+  font-family: "Plus Jakarta Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Painel visual (esquerda) — imagem/ilustração de inspiração
+   ========================================================================== */
+.login-visual {
+  flex: 1 1 50%;
+  background: var(--ink);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px;
+  box-sizing: border-box;
+}
+
+.login-visual-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.login-visual-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.login-visual-copy h2 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
+  max-width: 420px;
+}
+
+.login-visual-copy p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  max-width: 380px;
+  font-weight: 500;
+}
+
+.login-visual-frame {
+  border-radius: 16px;
+  background: var(--bg-page);
+  padding: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.login-visual-frame img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+/* ==========================================================================
+   Painel do formulário (direita)
+   ========================================================================== */
+.login-panel {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  background: var(--bg-panel);
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Cabeçalho de boas-vindas
+   ========================================================================== */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.login-header p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Mensagem de erro
+   ========================================================================== */
+.error-message {
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Formulário e inputs
+   ========================================================================== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  background: var(--bg-page);
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--ink);
+  padding: 12px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: var(--ink);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(20, 20, 26, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #b0b3ba;
+}
+
+/* ==========================================================================
+   Botão de acesso
+   ========================================================================== */
+.btn-login {
+  background: var(--ink);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-login:hover:not(:disabled) {
+  background: #0a0a0d;
+  transform: translateY(-1px);
+}
+
+.btn-login:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Popups do SweetAlert2 (login e confirmação de saída)
+   ========================================================================== */
+.ataflow-swal-popup {
+  border-radius: 14px !important;
+  border: 1px solid #e8e9ec;
+}
+
+.ataflow-swal-confirm {
+  border-radius: 8px !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+}
+
+.ataflow-swal-cancel {
+  border-radius: 8px !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+  color: #83868f !important;
+  border: 1.5px solid #e8e9ec !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 960px) {
+  .login-visual {
+    display: none;
+  }
+
+  .login-panel {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 28px 22px;
+    border-radius: 10px;
+  }
+
+  .login-header h1 {
+    font-size: 22px;
+  }
+}

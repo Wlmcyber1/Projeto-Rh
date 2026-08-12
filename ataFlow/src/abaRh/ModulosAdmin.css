@@ -1,0 +1,161 @@
+/* ModulosAdmin.css */
+
+/* Cabeçalhos internos das seções */
+.modulo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modulo-header h4 {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.modulo-subtitulo {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Área de Filtros Seletores (Atas de Visita) */
+.filtros-container {
+  display: flex;
+  gap: 16px;
+}
+
+.seletor-filtro {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.seletor-filtro:focus {
+  border-color: #16a34a;
+}
+
+/* Bloco de Destaque / Resumo de Horas */
+.painel-destaque-horas {
+  background-color: #f8fafc;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border-left: 4px solid #16a34a;
+}
+
+.painel-destaque-horas p {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.painel-destaque-horas h5 {
+  margin: 0;
+  font-size: 16px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.painel-destaque-horas .destaque-numero {
+  color: #16a34a;
+  font-size: 22px;
+  font-weight: 800;
+  margin-left: 6px;
+}
+
+/* Botões Modulares */
+.btn-acao-principal {
+  padding: 10px 18px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-acao-principal:hover {
+  background-color: #15803d;
+}
+
+.btn-acao-escuro {
+  padding: 10px 18px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-acao-escuro:hover {
+  background-color: #1e293b;
+}
+
+.btn-tabela-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0;
+}
+
+.btn-tabela-link:hover {
+  text-decoration: underline;
+}
+
+.btn-tabela-acao {
+  padding: 6px 12px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Badges Extras para Status Diferentes */
+.status-badge.alerta {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+/* Botão de Voltar para a Home */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.btn-voltar:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+} 

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:mir-s3-cdn-cf.behance.net)",
+      "Bash(mkdir -p \"/c/Users/Letmo/AppData/Local/Temp/claude/c--Users-Letmo-OneDrive--rea-de-Trabalho-ataFlow/2e7c682f-5bf1-4263-af7c-f82998539f5e/scratchpad\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://mir-s3-cdn-cf.behance.net/project_modules/1400/9bc58998696465.5ee1f52c9b94b.jpg\" -o \"/c/Users/Letmo/AppData/Local/Temp/claude/c--Users-Letmo-OneDrive--rea-de-Trabalho-ataFlow/2e7c682f-5bf1-4263-af7c-f82998539f5e/scratchpad/inspiracao.jpg\")",
+      "Read(//c/Users/Letmo/AppData/Local/Temp/claude/c--Users-Letmo-OneDrive--rea-de-Trabalho-ataFlow/2e7c682f-5bf1-4263-af7c-f82998539f5e/scratchpad/**)",
+      "Bash(cp \"/c/Users/Letmo/AppData/Local/Temp/claude/c--Users-Letmo-OneDrive--rea-de-Trabalho-ataFlow/2e7c682f-5bf1-4263-af7c-f82998539f5e/scratchpad/inspiracao.jpg\" \"/c/Users/Letmo/OneDrive/Área de Trabalho/ataFlow/ataFlow/src/assets/login-inspiracao.jpg\" *)",
+      "Bash(mkdir -p \"/c/Users/Letmo/OneDrive/Área de Trabalho/ataFlow/ataFlow/src/data\")",
+      "Bash(echo %USERPROFILE%; ls \"C:/Users/Letmo/Downloads\" 2>&1 | head -5)",
+      "Read(//c/Users/Letmo/Downloads/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Letmo\\AppData\\Local\\Temp\\claude\\c--Users-Letmo-OneDrive--rea-de-Trabalho-ataFlow\\2e7c682f-5bf1-4263-af7c-f82998539f5e\\scratchpad",
+      "C:\\Users\\Letmo\\OneDrive\\Área de Trabalho\\ataFlow\\ataFlow\\src"
+    ]
+  }
+}

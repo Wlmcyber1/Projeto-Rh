@@ -1,0 +1,37 @@
+[
+  {
+    "id": "r1",
+    "numero": "RDC nº 429/2020 e IN nº 75/2020",
+    "titulo": "Rotulagem Nutricional Frontal (selo \"Alto em\")",
+    "descricao": "Dispõe sobre a rotulagem nutricional frontal de alimentos embalados, com selo de advertência para alto teor de açúcar, gorduras saturadas e sódio.",
+    "link": null
+  },
+  {
+    "id": "r2",
+    "numero": "RDC nº 259/2002",
+    "titulo": "Rotulagem Geral de Alimentos Embalados",
+    "descricao": "Requisitos gerais de rotulagem: lista de ingredientes, lote, data de fabricação/validade, origem e demais informações obrigatórias no rótulo.",
+    "link": null
+  },
+  {
+    "id": "r3",
+    "numero": "RDC nº 360/2003",
+    "titulo": "Rotulagem Nutricional Obrigatória",
+    "descricao": "Estabelece o formato e o conteúdo obrigatório da tabela de informação nutricional nos rótulos de alimentos embalados.",
+    "link": null
+  },
+  {
+    "id": "r4",
+    "numero": "RDC nº 26/2015",
+    "titulo": "Rotulagem de Alérgenos",
+    "descricao": "Obrigatoriedade de declaração da presença de alérgenos alimentares (glúten, leite, ovo, amendoim, entre outros) nos rótulos dos produtos.",
+    "link": null
+  },
+  {
+    "id": "r5",
+    "numero": "A definir",
+    "titulo": "Selos de Inspeção Sanitária de Origem (SIF, SIE, SIM)",
+    "descricao": "Selos que identificam a origem e a fiscalização sanitária de produtos de origem animal comercializados.",
+    "link": null
+  }
+]

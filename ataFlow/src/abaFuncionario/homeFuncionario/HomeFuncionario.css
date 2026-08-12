@@ -1,0 +1,196 @@
+/* HomeFuncionario.css */
+.home-func-container {
+  --bg-page: #e9ebee;
+  --bg-panel: #ffffff;
+  --bg-muted: #f4f5f7;
+  --text-primary: #17181c;
+  --text-secondary: #83868f;
+  --text-tertiary: #b0b3ba;
+  --border-color: #e8e9ec;
+  --ink: #14141a;
+
+  padding: 30px;
+  font-family: "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  color: var(--text-primary);
+  box-sizing: border-box;
+  letter-spacing: -0.01em;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  transition: all 0.15s ease;
+}
+
+.btn-voltar:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-muted);
+}
+
+.titlo-fechamento {
+  display: flex;
+  justify-content: space-between;
+}
+
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-panel);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.welcome-text h1 {
+  margin: 0 0 6px 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.welcome-text p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-nova-ata {
+  padding: 12px 24px;
+  background-color: var(--ink);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-nova-ata:hover {
+  opacity: 0.85;
+}
+
+.btn-secundario {
+  padding: 12px 22px;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-secundario:hover {
+  border-color: var(--ink);
+  background-color: var(--bg-muted);
+}
+
+.history-card {
+  background: var(--bg-panel);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 24px;
+}
+
+.history-card h2 {
+  margin: 0 0 15px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.custom-table th {
+  padding: 12px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  background-color: var(--bg-muted);
+  font-weight: 700;
+}
+
+.custom-table td {
+  padding: 14px 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--bg-muted);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .home-func-container {
+    padding: 18px;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .welcome-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-nova-ata,
+  .btn-secundario {
+    width: 100%;
+  }
+
+  .titlo-fechamento {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .history-card {
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .custom-table {
+    min-width: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-func-container {
+    padding: 14px;
+  }
+
+  .welcome-text h1 {
+    font-size: 20px;
+  }
+}

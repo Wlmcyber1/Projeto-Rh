@@ -1,0 +1,37 @@
+[
+  {
+    "id": "a1",
+    "numero": "RDC nº 216/2004",
+    "titulo": "Boas Práticas de Fabricação e Manipulação de Alimentos",
+    "descricao": "Requisitos sanitários gerais de higiene, manipulação e estrutura para estabelecimentos que preparam ou produzem alimentos — item recorrente em checklists de visita técnica.",
+    "link": null
+  },
+  {
+    "id": "a2",
+    "numero": "RDC nº 275/2002",
+    "titulo": "Checklist de Boas Práticas e POP",
+    "descricao": "Base da lista de verificação aplicada em auditorias: documentação de Procedimentos Operacionais Padronizados (higienização, controle de água, manejo de resíduos, etc.).",
+    "link": null
+  },
+  {
+    "id": "a3",
+    "numero": "A definir",
+    "titulo": "Análise de Perigos e Pontos Críticos de Controle (APPCC/HACCP)",
+    "descricao": "Sistema de controle preventivo de segurança alimentar aplicado às etapas de produção e manipulação de alimentos.",
+    "link": null
+  },
+  {
+    "id": "a4",
+    "numero": "RDC nº 216/2004 (Anexo)",
+    "titulo": "Controle de Temperatura e Conservação de Alimentos",
+    "descricao": "Parâmetros de temperatura para armazenamento, exposição e transporte de alimentos perecíveis e não perecíveis.",
+    "link": null
+  },
+  {
+    "id": "a5",
+    "numero": "A definir",
+    "titulo": "Capacitação e Curso de Manipulador de Alimentos",
+    "descricao": "Exigência de treinamento periódico dos colaboradores em boas práticas de higiene e manipulação de alimentos.",
+    "link": null
+  }
+]
