@@ -38,18 +38,14 @@ Sistema web para gerenciar as visitas técnicas realizadas por uma consultoria a
    npm install
    ```
 
-3. Configure as variáveis de ambiente:
-   ```bash
-   cp .env.example .env
-   ```
-   Depois abra o `.env` e preencha com os valores do projeto Supabase (URL e chave anônima). Você encontra esses valores no painel do Supabase em **Project Settings > API**, desde que já tenha sido convidado para o projeto.
 
-4. Rode o projeto em modo desenvolvimento:
+
+3. Rode o projeto em modo desenvolvimento:
    ```bash
    npm run dev
    ```
 
-5. Acesse o endereço mostrado no terminal (geralmente `http://localhost:5173`).
+
 
 
 ## Estrutura do projeto
