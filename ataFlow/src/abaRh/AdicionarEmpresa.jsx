@@ -10,12 +10,9 @@ export default function AdicionarEmpresa({ onClose, onEmpresaAdicionada }) {
   const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
 
-  //adicionar restrições.
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     navigate("/admin/home")
-    //obriga o usuario digitar e tira os espaços
     if (!nomeEmpresa.trim()) {
       alert("Por favor, informe o nome da empresa.");
       return;
@@ -24,45 +21,37 @@ export default function AdicionarEmpresa({ onClose, onEmpresaAdicionada }) {
     setCarregando(true);
 
     try {
-      // tenta salvar a nova empresa lá na tabela 'empresas' do Supabase
       const { data, error } = await supabase
-        .from("empresas") // Seleciona a tabela 'empresas'
+        .from("empresas")
         .insert([
           {
-            nome: nomeEmpresa, // Salva o nome vindo do input
-            cnpj: cnpj, // Salva o CNPJ vindo do input
+            nome: nomeEmpresa,
+            cnpj: cnpj,
           },
         ]);
 
-      //  se o Supabase responder com algum erro , lança direto pro 'catch'
       if (error) throw error;
 
-      // se deu tudo certo!
       await Swal.fire({
         icon: "success",
         title: `Empresa cadastrada com sucesso`,
         text: ``,
         confirmButtonColor: "#0284c7",
-        timer: 2000, // Fecha automaticamente após 2 segundos
+        timer: 2000,
       });
 
-      // executa a função do pai (se ela existir) para atualizar a lista de empresas na tela em tempo real
       if (onEmpresaAdicionada) onEmpresaAdicionada();
 
-      // fecha a janela/modal do formulário
       if (onClose) onClose();
     } catch (error) {
-      // caso aconteça qualquer falha de conexão ou no banco, o erro é exibido aqui
       console.error("Erro ao cadastrar empresa:", error.message);
       alert(
         "Erro ao cadastrar a empresa. Verifique o console para mais detalhes.",
       );
     } finally {
-      // o 'finally' executa SEMPRE no final, dando certo ou errado, para desativar o carregamento
       setCarregando(false);
     }
 
-    // tempo de carregamento
     setTimeout(() => {
       setCarregando(false);
       if (onEmpresaAdicionada) onEmpresaAdicionada();
@@ -75,7 +64,6 @@ export default function AdicionarEmpresa({ onClose, onEmpresaAdicionada }) {
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        {/* Cabeçalho */}
         <div className="modal-header">
           <h2>Cadastrar Nova Empresa</h2>
           <button className="btn-close" onClick={onClose} aria-label="Fechar">
@@ -83,7 +71,6 @@ export default function AdicionarEmpresa({ onClose, onEmpresaAdicionada }) {
           </button>
         </div>
 
-        {/* Formulário */}
         <form onSubmit={handleSubmit} className="empresa-form">
           <div className="form-group">
             <label htmlFor="nomeEmpresa">
@@ -125,7 +112,6 @@ export default function AdicionarEmpresa({ onClose, onEmpresaAdicionada }) {
             </select>
           </div>
 
-          {/* Ações do Rodapé */}
           <div className="modal-footer">
             <button
               type="button"

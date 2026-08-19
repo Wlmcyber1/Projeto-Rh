@@ -19,7 +19,6 @@ function Pdf() {
         return;
       }
 
-      // busca as visitas trazendo automaticamente o NOME da empresa via Foreign Key
       const { data: visitas, error } = await supabase
         .from("ataVisitas")
         .select(`*, empresas ( nome )`);
@@ -31,18 +30,15 @@ function Pdf() {
 
       if (!visitas || !funcionarios) return;
 
-      // função auxiliar para converter "HH:MM:SS" em número decimal
       const converterHoraPraDecimal = (tempoTexto) => {
         if (!tempoTexto) return 0;
         const [horas, minutos] = tempoTexto.split(":");
         return (parseInt(horas, 10) || 0) + (parseInt(minutos, 10) || 0) / 60;
       };
 
-      // função auxiliar para calcular salário
       const salarioTotal = (horasDecimal, valorPorHora = 60) =>
         horasDecimal * valorPorHora + 200;
 
-      // mapeia cada visita associando o nome do funcionário e convertendo as horas
       const visitasComNome = visitas.map((visita) => {
         const funcionario = funcionarios.find(
           (u) => String(u.user_id) === String(visita.usuario_id)
@@ -55,8 +51,6 @@ function Pdf() {
         };
       });
 
-      // agrupa e calcula as horas/salário por funcionário
-      
       const folhaRH = funcionarios.map((func) => {
         const visitasDoFunc = visitasComNome.filter(
           (v) => String(v.usuario_id) === String(func.user_id)
@@ -79,7 +73,6 @@ function Pdf() {
         };
       });
 
-      // estado é atualizado uma única vez, já com o array completo
       setRelatorioFolha(folhaRH);
       setVisitasDetalhadas(visitasComNome);
     } catch (error) {
@@ -95,13 +88,10 @@ function Pdf() {
 
     const doc = new jsPDF();
 
-    // fonte/tamanho precisam ser definidos ANTES do texto que os usa
     doc.setFont("helvetica", "bold");
     doc.setFontSize(15);
     doc.text("Folha de Pagamento", 14, 15);
 
-    //quando estava chamando relatoriofolha, nao retornava nada, pq? 
-    //pq relatorio folha so está alterado quando recebe a resposta da requisão (lembre-se: uma função assicrona demora um pouco para responder o que queremos)
     const linhas = relatorioFolha.map((func) => [
       func.nome,
       `${func.totalHorasMes}`,

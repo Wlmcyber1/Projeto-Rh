@@ -139,14 +139,6 @@ export default function Legislacao({ embedded = false }) {
         <p>Navegue pelas categorias abaixo para consultar as normas aplicáveis.</p>
       </div>
 
-      <div className="leg-aviso">
-        <IconInfo />
-        <span>
-          Conteúdo ilustrativo. Substitua os itens de exemplo pelas resoluções e links
-          oficiais definitivos.
-        </span>
-      </div>
-
       <nav className="leg-tabs">
         {CATEGORIAS.map((cat) => (
           <button

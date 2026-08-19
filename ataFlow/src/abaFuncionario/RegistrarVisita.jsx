@@ -20,30 +20,28 @@ export default function RegistrarVisita() {
   const carregarEmpresas = async () => {
     try {
       const { data, error } = await supabase
-        .from("empresas") // Vá na tabela empresas
-        .select("id, nome"); // Pegue apenas o id e o nome delas 
+        .from("empresas")
+        .select("id, nome");
 
-      if (error) throw error; // Se der erro, joga pro "catch"
+      if (error) throw error;
 
       if (data) {
-        setEmpresas(data); // Guarda a lista de empresas no estado do React
+        setEmpresas(data);
       }
     } catch (error) {
       console.error("Erro ao carregar empresas:", error.message);
     }
   };
 
-  // Executa assim que a tela abre
   useEffect(() => {
     carregarEmpresas();
   }, []);
 
 
   const gravarVisita = async (e) => {
-    e.preventDefault(); // impede a página de recarregar ao enviar o formulário
+    e.preventDefault();
 
     try {
-      // descobre o ID do usuário que está logado
       const {
         data: { user },
         error: authError,
@@ -54,9 +52,8 @@ export default function RegistrarVisita() {
         return;
       }
 
-      // envia os dados para a tabela 'ataVisitas'
       const { data, error } = await supabase
-        .from("ataVisitas") // Sua tabela de visitas
+        .from("ataVisitas")
         .insert([
           {
             usuario_id: user.id,
@@ -83,26 +80,21 @@ export default function RegistrarVisita() {
   };
   const calcularTempoTotal = () => {
     if (!horaEntrada || !horaSaida) return "00:00";
-    // transforma as horas (ex: "08:30") em minutos totais desde o início do dia
     const [hEntrada, mEntrada] = horaEntrada.split(":").map(Number);
     const [hSaida, mSaida] = horaSaida.split(":").map(Number);
 
     const totalMinutosEntrada = hEntrada * 60 + mEntrada;
     const totalMinutosSaida = hSaida * 60 + mSaida;
 
-    // calcula a diferença em minutos
     let diferencaMinutos = totalMinutosSaida - totalMinutosEntrada;
 
-    // se a saída for menor que a entrada
     if (diferencaMinutos < 0) {
       diferencaMinutos += 24 * 60;
     }
 
-    // Transforma de volta para o formato HH:MM
     const horasResultantes = Math.floor(diferencaMinutos / 60);
     const minutosResultantes = diferencaMinutos % 60;
 
-    // Formata para ter sempre 2 dígitos (ex: "02:05")
     const horasFormatadas = String(horasResultantes).padStart(2, "0");
     const minutosFormatados = String(minutosResultantes).padStart(2, "0");
 
@@ -110,7 +102,6 @@ export default function RegistrarVisita() {
   };
   return (
     <div className="registrar-visita-container">
-      {/* CABEÇALHO */}
       <header className="form-header">
         <h1>Lançar Nova Visita Técnica</h1>
         <p>
@@ -119,10 +110,8 @@ export default function RegistrarVisita() {
         </p>
       </header>
 
-      {/* CARD DO FORMULÁRIO */}
       <div className="form-card">
         <form className="visita-form">
-          {/* SELEÇÃO DA EMPRESA ATUALIZADA COM A LISTA COMPLETA DA PLANILHA */}
           <div className="form-group">
             <label htmlFor="empresa-visitada">
               Selecione a Empresa / Operação
@@ -134,7 +123,6 @@ export default function RegistrarVisita() {
             >
               <option value="">Selecione uma empresa...</option>
 
-              {/* O .map percorre o array de empresas e cria uma <option> para cada uma */}
               {empresas.map((emp) => (
                 <option key={emp.id} value={emp.id}>
                   {emp.nome}
@@ -143,7 +131,6 @@ export default function RegistrarVisita() {
             </select>
           </div>
 
-          {/* DATA DA VISITA */}
           <div className="form-group">
             <label htmlFor="data-visita">Data da Visita</label>
             <input
@@ -153,7 +140,6 @@ export default function RegistrarVisita() {
             />
           </div>
 
-          {/* REGISTRO DE HORÁRIO DE TRABALHO */}
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="hora-entrada">Horário de Entrada</label>
@@ -189,7 +175,6 @@ export default function RegistrarVisita() {
             </div>
           </div>
 
-          {/* ATA DE ATIVIDADES */}
           <div className="form-group">
             <label htmlFor="detalhes-atividades">
               O que foi executado na visita? (Ata de Visita)
@@ -202,7 +187,6 @@ export default function RegistrarVisita() {
             ></textarea>
           </div>
 
-          {/* AÇÕES */}
           <div className="form-actions">
             <button
               type="button"
@@ -216,7 +200,6 @@ export default function RegistrarVisita() {
               className="btn-salvar"
              onClick={gravarVisita}
             >
-              {/*necessario adicionar isso dentro de um form e adicionar o onSubmit para adicionar a função voltar e gravar visita  */}
               Gravar Visita
             </button>
           </div>

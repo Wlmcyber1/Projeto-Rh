@@ -90,20 +90,3 @@ ataFlow/
 ├── eslint.config.js
 └── package.json
 ```
-
-## Contribuindo
-
-1. Crie uma branch a partir da `main` para a sua tarefa:
-   ```bash
-   git checkout -b nome-da-feature
-   ```
-2. Faça as alterações e os commits.
-3. Envie a branch e abra um Pull Request:
-   ```bash
-   git push origin nome-da-feature
-   ```
-4. Peça revisão antes de mesclar na `main`.
-
-## Documentação adicional
-
-Para entender o funcionamento detalhado de cada tela, os bugs conhecidos e os próximos ajustes planejados, consulte [`DOCUMENTACAO_TECNICA.md`](./DOCUMENTACAO_TECNICA.md).

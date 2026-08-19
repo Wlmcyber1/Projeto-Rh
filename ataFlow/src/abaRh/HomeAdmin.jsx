@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import Swal from "sweetalert2";
 
-// Ícones de traço simples (sem dependências externas), no mesmo estilo minimalista do painel
 const IconGrid = () => (
   <svg
     viewBox="0 0 24 24"
@@ -114,13 +113,10 @@ const IconBell = () => (
 );
 
 export default function HomeAdmin() {
-  // Estado para controlar as telas ativas (null mostra a "Visão Geral")
   const [telaAtiva, setTelaAtiva] = useState(null);
 
-  // Estado para controlar se o menu lateral está recolhido/fechado ou aberto
   const [menuFechado, setMenuFechado] = useState(false);
 
-  // Funções para alternar as telas
   const handleIrParaInicio = () => setTelaAtiva(null);
 
   const handleMudarTelaFuncionario = () => setTelaAtiva("funcionarias");
@@ -130,7 +126,6 @@ export default function HomeAdmin() {
 
   const navigate = useNavigate();
 
-  // Função para abrir/fechar o menu lateral
   const handleToggleSidebar = () => setMenuFechado(!menuFechado);
 
   const handleVoltarTelaInicio = async () => {
@@ -174,7 +169,6 @@ export default function HomeAdmin() {
   };
   return (
     <div className="admin-container">
-      {/* BARRA LATERAL (MENU DO RH) */}
       <aside className={`admin-sidebar ${menuFechado ? "fechada" : ""}`}>
         <div className="sidebar-top">
           <div className="sidebar-brand">
@@ -245,7 +239,6 @@ export default function HomeAdmin() {
       </aside>
 
       <main className="admin-main">
-        {/* BARRA DE TOPO COM BUSCA, TOGGLE E PERFIL */}
         <div className="admin-top-bar">
           <div className="top-bar-left">
             <button
@@ -263,8 +256,6 @@ export default function HomeAdmin() {
             </div>
           </div>
         </div>
-
-        {/* RENDERIZAÇÃO CONDICIONAL DAS TELAS INTERNAS */}
 
         {telaAtiva === "atas" && (
           <div className="animacao-fade">
@@ -331,7 +322,6 @@ export default function HomeAdmin() {
           </div>
         )}
 
-        {/* TELA PADRÃO: VISÃO GERAL */}
         {telaAtiva === null && (
           <>
             <header className="admin-header">
@@ -342,7 +332,6 @@ export default function HomeAdmin() {
               Selecione uma área abaixo para começar.
             </p>
 
-            {/* ATALHOS DE NAVEGAÇÃO */}
             <section className="acesso-rapido-grid">
               <div className="card-acesso" onClick={handleMudarTelaFuncionario}>
                 <div className="card-acesso-topo">

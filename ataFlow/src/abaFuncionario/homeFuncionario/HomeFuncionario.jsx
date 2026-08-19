@@ -11,30 +11,19 @@ export default function HomeFuncionario() {
   const navigate = useNavigate();
   const [confirmation, setConfirmation] = useState(false);
   const [nomeEmpresa, setNomeEmpresa] = useState([]);
-  //AJUSTAR BOTÃO DE PAGAMENTO (ESTÁ MOSTRANDO TODOS OS FUNCIONARIOS E NÃO É ISSO QUE QUEREMOS)
 
-  //  Criamos a função para buscar o nome
   const mostrarNome = async () => {
     try {
-      // Pega o ID do usuário autenticado na sessão ativa do Supabase
-
       const {
         data: { user },
       } = await supabase.auth.getUser();
 
       if (user) {
-        //busca o nome do usuário correspondente na tabela "users"
         const { data: perfil, error } = await supabase
-          //pegue o que veio em data e salve com o apelido de perfil
-
           .from("users")
-          //vá para tabela users
           .select("nome")
-          //selecione a coluna nome
           .eq("user_id", user.id)
-          //que seja igual a user_id (é o where)
           .maybeSingle();
-        //Eu sei que essa busca só vai trazer 1 ou nenhum resultado. Então, me devolva direto o objeto {} em vez de uma lista.
 
         if (perfil && !error) {
           setNomeUsuario(perfil.nome);
@@ -63,7 +52,6 @@ export default function HomeFuncionario() {
       console.log(error);
     }
   };
-  //  useEffect executa a função mostrarNome assim que a tela abre
   useEffect(() => {
     (mostrarNome(), mostrarEmpresas());
   }, []);
@@ -107,7 +95,6 @@ export default function HomeFuncionario() {
         ← Voltar para o Início
       </button>
 
-      {/* SEÇÃO DE BOAS-VINDAS */}
       <section className="welcome-section">
         <div className="welcome-text">
           <h1>Olá, {nomeUsuario}</h1>
@@ -126,7 +113,6 @@ export default function HomeFuncionario() {
         </div>
       </section>
 
-      {/* SEU HISTÓRICO RECENTE */}
       <div className="history-card">
         <div className="titlo-fechamento">
           <h2>Meus Registros Recentes (Mês Atual)</h2>
@@ -143,7 +129,6 @@ export default function HomeFuncionario() {
             </tr>
           </thead>
           <tbody>
-            {/*ao inves de usarmos o return usamos o paranteses*/}
             {nomeEmpresa.map((e) => (
               <tr key={e.id}>
                 <td>{e.data_visita}</td>

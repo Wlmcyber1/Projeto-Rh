@@ -11,14 +11,10 @@ export default function VisualizacaoEmpresas() {
     try {
 
       setCarregando(true)
-     
-        // busca o nome do usuário correspondente na tabela "empresa"
+
         const { data, error} = await supabase
-          //pegue o que veio em data e salve com o apelido de empresa
           .from("empresas")
-          //vá para tabela empresa
           .select("nome, id, cnpj")
-          //selecione a coluna nome
           .order("id", {ascending:true});
        
         if(error) throw error; 
@@ -46,8 +42,6 @@ export default function VisualizacaoEmpresas() {
   };
   return (
    <div className="painel-box">
-      
-      {/* Cabeçalho do Módulo */}
       <div className="modulo-header">
         <div>
           <h4>Empresas / Clientes Parceiros</h4>
@@ -58,7 +52,6 @@ export default function VisualizacaoEmpresas() {
         </button>
       </div>
 
-      {/* Tabela de Empresas Dinâmica */}
       <table className="tabela-atas">
         <thead>
           <tr>
@@ -70,18 +63,15 @@ export default function VisualizacaoEmpresas() {
           </tr>
         </thead>
         <tbody>
-          {/* Se estiver carregando, mostra uma mensagem */}
           {carregando ? (
             <tr>
               <td colSpan="5" style={{ textAlign: 'center' }}>Carregando empresas...</td>
             </tr>
           ) : nomeEmpresa.length === 0 ? (
-            /* Se não houver empresas cadastradas */
             <tr>
               <td colSpan="5" style={{ textAlign: 'center' }}>Nenhuma empresa cadastrada.</td>
             </tr>
           ) : (
-            /* mapeando os valores */
             nomeEmpresa.map((emp) => (
               <tr key={emp.id}>
                 <td><strong>#{emp.id}</strong></td>

@@ -76,7 +76,7 @@ export default function Telaacesso() {
           popup: 'ataflow-swal-popup',
           confirmButton: 'ataflow-swal-confirm',
         },
-        timer: 2000, // Fecha automaticamente após 2 segundos
+        timer: 2000,
       });
 
       const categoriaFormatada = perfil.categoria
@@ -128,10 +128,8 @@ export default function Telaacesso() {
             <p>Acesse sua conta para continuar</p>
           </header>
 
-          {/* Mensagem de erro amigável na interface */}
           {erro && <p className="error-message">{erro}</p>}
 
-          {/* O formulário envia os dados utilizando o React Hook Form */}
           <form className="login-form" onSubmit={handleSubmit(realizarLogin)}>
             <div className="form-group">
               <label htmlFor="email">E-mail</label>
@@ -155,7 +153,6 @@ export default function Telaacesso() {
               />
             </div>
 
-            {/* O botão DEVE ser type="submit" para que o onSubmit seja disparado */}
             <button className="btn-login" type="submit" disabled={carregando}>
               {carregando ? "Entrando..." : "Acessar Sistema"}
             </button>

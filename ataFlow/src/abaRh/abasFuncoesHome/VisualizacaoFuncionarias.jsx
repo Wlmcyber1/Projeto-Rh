@@ -27,16 +27,16 @@ export default function VisualizacaoFuncionarias() {
         </thead>
         <tbody>
           <tr>
-            <td><strong>Fran Rodrigues</strong></td>
+            <td><strong>Funcionária Exemplo 1</strong></td>
             <td>Consultora de Alimentos</td>
-            <td>fran.rodrigues@email.com</td>
+            <td>funcionaria1@exemplo.com</td>
             <td><span className="status-badge">Ativa</span></td>
             <td><button className="btn-tabela-link" type="button">Editar</button></td>
           </tr>
           <tr>
-            <td><strong>Irisney Silva</strong></td>
+            <td><strong>Funcionária Exemplo 2</strong></td>
             <td>Auditora Operacional</td>
-            <td>irisney.silva@email.com</td>
+            <td>funcionaria2@exemplo.com</td>
             <td><span className="status-badge">Ativa</span></td>
             <td><button className="btn-tabela-link" type="button">Editar</button></td>
           </tr>
